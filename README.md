@@ -1,0 +1,13 @@
+# HI, GOOD PEOPLE
+## I'M MAYRIZAL ARSYLIA SETYADI
+### INDUSTRIAL ENGINEERING 
+- 👋 Hi, I’m @Mayrizal
+- 👀 I’m interested in ...
+- 🌱 I’m currently learning ...
+- 💞️ I’m looking to collaborate on ...
+- 📫 How to reach me ...
+
+<!---
+Mayrizal/Mayrizal is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+You can click the Preview link to take a look at your changes.
+--->
