@@ -1,6 +1,6 @@
 # HI, GOOD PEOPLE
-## I'M MAYRIZAL ARSYLIA SETYADI
-### INDUSTRIAL ENGINEERING 
+I'M MAYRIZAL ARSYLIA SETYADI
+INDUSTRIAL ENGINEERING 
 - 👋 Hi, I’m @Mayrizal
 - 👀 I’m interested in ...
 - 🌱 I’m currently learning ...
