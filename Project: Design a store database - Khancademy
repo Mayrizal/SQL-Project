@@ -1,0 +1,59 @@
+CREATE TABLE xyz_store (id INTEGER PRIMARY KEY, name_product TEXT, price INTEGER, Stock INTEGER, material TEXT, size TEXT);
+
+INSERT INTO xyz_store VALUES (1, "Supreme", 1000, 50, "Premium", "L");
+INSERT INTO xyz_store VALUES (2, "Berak", 300, 32, "Cotton", "L");
+INSERT INTO xyz_store VALUES (3, "The Executive", 250, 20, "Cotton", "L");
+INSERT INTO xyz_store VALUES (4, "Uniqlo", 400, 10, "Premium", "L");
+INSERT INTO xyz_store VALUES (5, "Miniso", 100, 50, "Premium Cotton", "L");
+INSERT INTO xyz_store VALUES (6, "Supreme X NASA", 1000, 50, "Premium", "L");
+INSERT INTO xyz_store VALUES (7, "Berak X Converse", 300, 32, "Cotton", "L");
+INSERT INTO xyz_store VALUES (8, "The Executive Premium", 250, 20, "Cotton", "L");
+INSERT INTO xyz_store VALUES (9, "Uniqlo X Jaws", 100, 50, "Premium Cotton", "L");
+INSERT INTO xyz_store VALUES (11, "Supreme poco loco", 1000, 50, "Premium", "L");
+INSERT INTO xyz_store VALUES (12, "Berak X compass", 300, 32, "Cotton", "L");
+INSERT INTO xyz_store VALUES (13, "The Executive Elegant", 250, 20, "Cotton", "L");
+INSERT INTO xyz_store VALUES (14, "Uniqlo Moana", 400, 10, "Premium", "L");
+INSERT INTO xyz_store VALUES (15, "Miniso Anime", 100, 50, "Premium Cotton", "L");
+INSERT INTO xyz_store VALUES (10, "Miniso Gundam", 100, 50, "Premium Cotton", "L");
+
+SELECT * FROM xyz_store;
+
+SELECT name_product, price, stock FROM xyz_store ORDER BY price;
+
+CREATE TABLE xyz_customer (id INTEGER PRIMARY KEY, id_customer INTEGER , name_customer TEXT, quantity INTEGER, size TEXT);
+
+INSERT INTO xyz_customer VALUES (1, 1, "Supeno", 10, "L");
+INSERT INTO xyz_customer VALUES (4, 2, "Cak Kodir", 20, "L");
+INSERT INTO xyz_customer VALUES (5, 3, "Alexander sueb", 25, "L");
+INSERT INTO xyz_customer VALUES (6, 4, "Eric sukinem", 4, "L");
+INSERT INTO xyz_customer VALUES (8, 5, "raisin", 10, "L");
+
+SELECT * FROM xyz_customer;
+
+SELECT name_customer, quantity, size FROM xyz_customer ORDER BY quantity;
+
+/*_____________________ INNER JOIN ______________________*/
+
+SELECT xyz_store.name_product, xyz_customer.name_customer, xyz_customer.quantity, xyz_store.price, xyz_customer.size FROM xyz_store INNER JOIN xyz_customer ON xyz_store.id = xyz_customer.id order by quantity;
+
+/* how much the customer must pay for the cloth? */
+SELECT name_customer, name_product, xyz_customer.quantity*xyz_store.price FROM xyz_store INNER JOIN xyz_customer ON xyz_store.id = xyz_customer.id;
+
+/* What's the most expensive price for a clothing? */
+SELECT MAX(price) as most_dollars_paid
+    FROM xyz_store;
+
+/* What's the average price these were sell the clothing? */
+SELECT AVG(price) 
+    FROM xyz_store;
+
+/* How much money was paid for these paintings total? */
+SELECT SUM(price) AS All_total_dollars_paid
+    FROM xyz_store;
+
+/* How many clothing cost more than 500 dollar? */
+SELECT COUNT(*) AS greater_than_500doll
+    FROM xyz_store WHERE price >= 500;
+
+/* How many clothes with Supreme Label are there? */
+SELECT COUNT(name_product) AS Sell FROM xyz_store;
